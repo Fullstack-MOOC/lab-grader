@@ -1,0 +1,45 @@
+{
+  "results": {
+    "tool": {
+      "name": "cypress"
+    },
+    "summary": {
+      "tests": 2,
+      "failed": 2,
+      "passed": 0,
+      "skipped": 0,
+      "pending": 0,
+      "other": 0,
+      "start": 1755549491103,
+      "stop": 1755549505843
+    },
+    "tests": [
+      {
+        "name": "Testing for React Intro Lab should update video list when typing in the search bar",
+        "status": "failed",
+        "duration": 6399,
+        "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#video-list > li`, but never found it.\n    at Context.eval (webpack://react-short/./cypress/e2e/e2e.cy.js:11:7)",
+        "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#video-list > li`, but never found it.\n    at Context.eval (webpack://react-short/./cypress/e2e/e2e.cy.js:11:7)",
+        "rawStatus": "failed",
+        "type": "e2e",
+        "filePath": "cypress/e2e/e2e.cy.js",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 118.0.5993.159"
+      },
+      {
+        "name": "Testing for React Intro Lab should update video detail when typing in the search bar",
+        "status": "failed",
+        "duration": 4600,
+        "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#video-detail`, but never found it.\n    at Context.eval (webpack://react-short/./cypress/e2e/e2e.cy.js:18:7)",
+        "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#video-detail`, but never found it.\n    at Context.eval (webpack://react-short/./cypress/e2e/e2e.cy.js:18:7)",
+        "rawStatus": "failed",
+        "type": "e2e",
+        "filePath": "cypress/e2e/e2e.cy.js",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 118.0.5993.159"
+      }
+    ]
+  }
+}

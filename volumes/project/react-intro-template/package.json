@@ -1,0 +1,51 @@
+{
+  "name": "react-short",
+  "version": "2.0.0",
+  "main": "src/index.js",
+  "repository": "git@github.com:dartmouth-cs52/react-videos-reference.git",
+  "author": "Tim Tregubov <tim@zingweb.com>",
+  "type": "module",
+  "scripts": {
+    "test:component": "cypress run --component --no-runner-ui",
+    "test:e2e": "cypress run --e2e --no-runner-ui",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ],
+  "devDependencies": {
+    "@cypress/react": "^8.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.21",
+    "cypress": "^13.17.0",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-cypress": "^3.5.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "sass": "^1.86.3",
+    "vite": "^5.4.10",
+    "vite-plugin-eslint": "^1.8.1"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.6.1",
+    "axios": "^1.8.4",
+    "cypress-ctrf-json-reporter": "^0.0.12",
+    "immer": "^10.1.1",
+    "install": "^0.13.0",
+    "lodash.debounce": "^4.0.8",
+    "npm": "^11.5.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-redux": "^9.2.0",
+    "react-router": "^6.28.1",
+    "react-router-dom": "^6.28.1",
+    "redux": "^5.0.1",
+    "redux-thunk": "^3.1.0",
+    "zustand": "^5.0.3"
+  }
+}

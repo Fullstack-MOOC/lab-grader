@@ -1,0 +1,2 @@
+[console_scripts]
+coursera_autograder = coursera_autograder.main:main
