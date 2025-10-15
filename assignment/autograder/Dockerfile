@@ -41,8 +41,14 @@ RUN npm install -g npm@latest && \
     npx cypress install && \
     npx cypress verify
 
-COPY grader.sh aggregate-results.js ./
-RUN dos2unix grader.sh aggregate-results.js && chmod +x grader.sh && chmod +x aggregate-results.js
+# Bring in everything available in the build context (Dockerfile uploader may only include grader.zip)
+COPY . .
+
+# If grader.zip is present (Coursera often uploads only the zip), unzip it.
+# Then normalize line endings and set execute bits only for files that exist.
+RUN if [ -f grader.zip ]; then unzip -o grader.zip; fi && \
+    if [ -f grader.sh ]; then dos2unix grader.sh && chmod +x grader.sh; fi && \
+    if [ -f aggregate-results.js ]; then dos2unix aggregate-results.js && chmod +x aggregate-results.js; fi
 
 RUN mkdir -p /autograder/results
 
