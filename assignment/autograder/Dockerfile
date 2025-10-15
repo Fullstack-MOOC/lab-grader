@@ -2,25 +2,49 @@ FROM --platform=linux/amd64 cypress/base:22.12.0
 
 WORKDIR /grader
 
-# Update package lists and upgrade vulnerable packages
+ENV DEBIAN_FRONTEND=noninteractive \
+    COURSES_GRADING=true \
+    CI=true \
+    NODE_ENV=test \
+    MONGOMS_VERSION=7.0.14 \
+    MONGOMS_SYSTEM_BINARY=/usr/bin/mongod \
+    COREPACK_ENABLE_DOWNLOAD_PROMPT=0
+
+# System dependencies, MongoDB, and common CLI tooling
 RUN apt-get update && \
-    apt-get upgrade -y \
-        libxml2 \
-        libxml2-dev \
-        libglib2.0-0 \
-        libglib2.0-dev \
-        wget && \
-    apt-get install -y bc jq && \
-    rm -rf /var/lib/apt/lists/*
+    apt-get install -y --no-install-recommends \
+        curl \
+        gnupg \
+        ca-certificates && \
+    curl -fsSL https://pgp.mongodb.com/server-7.0.asc | gpg --dearmor -o /usr/share/keyrings/mongodb-server-7.0.gpg && \
+    echo "deb [ signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/debian bookworm/mongodb-org/7.0 main" | tee /etc/apt/sources.list.d/mongodb-org-7.0.list && \
+    apt-get update && \
+    apt-get install -y --no-install-recommends \
+        mongodb-org-server \
+        mongodb-mongosh \
+        bc \
+        jq \
+        dos2unix \
+        wget \
+        unzip \
+        netcat-openbsd \
+        iputils-ping && \
+    rm -rf /var/lib/apt/lists/* && \
+    mkdir -p /data/db
 
-RUN npm install -g cypress@13.17.0
-RUN npx cypress install
-RUN npx cypress verify
+# Ensure corepack (pnpm/yarn) is available without prompts
+RUN corepack enable
 
-COPY grader.sh ./
-RUN chmod +x grader.sh
+# Cypress setup (pre-install to leverage cache layers)
+RUN npm install -g npm@latest && \
+    npm install -g cypress@13.17.0 && \
+    npx cypress install && \
+    npx cypress verify
 
-# COPY grade.js ./
+COPY grader.sh aggregate-results.js ./
+RUN dos2unix grader.sh aggregate-results.js && chmod +x grader.sh && chmod +x aggregate-results.js
 
-ENTRYPOINT ["./grader.sh"]
+RUN mkdir -p /autograder/results
+
+ENTRYPOINT ["/bin/bash","-lc","./grader.sh"]
 
