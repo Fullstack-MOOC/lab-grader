@@ -1,0 +1,32 @@
+{
+  "name": "coursera-react-lab",
+  "version": "1.0.0",
+  "description": "Coursera React Lab with Cypress Testing",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite --port 8080 --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "cypress run --e2e",
+    "test:component": "cypress run --component",
+    "test:e2e": "cypress run --e2e",
+    "test:open": "cypress open",
+    "test:dev": "concurrently \"npm run dev\" \"wait-on http://localhost:8080 && cypress run --e2e\"",
+    "start": "vite --port 8080 --host 0.0.0.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.3",
+    "vite": "^4.4.5",
+    "cypress": "^13.17.0",
+    "@cypress/react": "^9.0.1",
+    "concurrently": "^8.2.2",
+    "wait-on": "^7.2.0"
+  },
+  "keywords": ["react", "cypress", "testing", "coursera"],
+  "author": "Coursera Student",
+  "license": "MIT"
+}

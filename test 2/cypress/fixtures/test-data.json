@@ -1,0 +1,21 @@
+{
+  "name": "Test Data",
+  "description": "Sample test data for Coursera React Lab",
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john@example.com"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane@example.com"
+    }
+  ],
+  "messages": [
+    "Hello Coursera!",
+    "Welcome to React Testing",
+    "Cypress is awesome!"
+  ]
+}
