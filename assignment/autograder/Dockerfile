@@ -1,26 +1,31 @@
-FROM --platform=linux/amd64 cypress/base:22.12.0
+FROM cypress/base:22.12.0
+
+# Install required system dependencies in one layer
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        bc \
+        jq \
+        curl \
+        wget \
+        unzip && \
+    rm -rf /var/lib/apt/lists/*
+
+# Switch to Node.js 20 LTS to avoid npm/node regressions with newer releases
+RUN npm install -g n@9.2.0 && \
+    n 20.18.1 && \
+    npm install -g npm@10.8.2 && \
+    npm cache clean --force
+ENV PATH="/usr/local/n/versions/node/20.18.1/bin:${PATH}"
+
+# Install specific Cypress version to match project using Node 20
+RUN npm install -g cypress@13.17.0
 
 WORKDIR /grader
 
-# Update package lists and upgrade vulnerable packages
-RUN apt-get update && \
-    apt-get upgrade -y \
-        libxml2 \
-        libxml2-dev \
-        libglib2.0-0 \
-        libglib2.0-dev \
-        wget && \
-    apt-get install -y bc jq && \
-    rm -rf /var/lib/apt/lists/*
-
-RUN npm install -g cypress@13.17.0
-RUN npx cypress install
-RUN npx cypress verify
+# Install Cypress binary for the specific version
+RUN cypress install
 
 COPY grader.sh ./
 RUN chmod +x grader.sh
 
-# COPY grade.js ./
-
 ENTRYPOINT ["./grader.sh"]
-

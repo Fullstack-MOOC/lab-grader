@@ -10,14 +10,14 @@
       "skipped": 0,
       "pending": 0,
       "other": 0,
-      "start": 1755549478544,
-      "stop": 1755549484097
+      "start": 1759418571810,
+      "stop": 1759418575630
     },
     "tests": [
       {
         "name": "SearchBar Component renders the SearchBar component",
         "status": "passed",
-        "duration": 125,
+        "duration": 95,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress/component/component.cy.jsx",
@@ -28,7 +28,7 @@
       {
         "name": "SearchBar Component calls onSearchChange on input change",
         "status": "passed",
-        "duration": 310,
+        "duration": 283,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress/component/component.cy.jsx",

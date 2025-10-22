@@ -1,0 +1,17 @@
+{
+  "name": "cypress-test-project",
+  "version": "1.0.0",
+  "description": "Simple Cypress test project",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "test": "cypress run"
+  },
+  "devDependencies": {
+    "cypress": "^13.6.0"
+  },
+  "keywords": ["cypress", "testing"],
+  "author": "",
+  "license": "ISC"
+}

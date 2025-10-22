@@ -1,0 +1,16 @@
+0 verbose cli /Users/moiz/.nvm/versions/node/v20.19.5/bin/node /Users/moiz/.nvm/versions/node/v20.19.5/bin/npm
+1 info using npm@10.8.2
+2 info using node@v20.19.5
+3 silly config load:file:/Users/moiz/.nvm/versions/node/v20.19.5/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/moiz/.npmrc
+5 silly config load:file:/Users/moiz/.nvm/versions/node/v20.19.5/etc/npmrc
+6 verbose title npm root
+7 verbose argv "root" "--global"
+8 verbose logfile logs-max:10 dir:/Users/moiz/CascadeProjects/lab-grader/assignment/results/submission/grader-workspace/.npm-cache/_logs/2025-10-22T02_55_27_679Z-
+9 verbose logfile /Users/moiz/CascadeProjects/lab-grader/assignment/results/submission/grader-workspace/.npm-cache/_logs/2025-10-22T02_55_27_679Z-debug-0.log
+10 verbose cwd /Users/moiz/CascadeProjects/lab-grader/assignment/results/submission
+11 verbose os Darwin 24.6.0
+12 verbose node v20.19.5
+13 verbose npm  v10.8.2
+14 verbose exit 0
+15 info ok

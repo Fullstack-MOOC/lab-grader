@@ -1,0 +1,19 @@
+0 verbose cli /Users/moiz/.nvm/versions/node/v20.19.5/bin/node /Users/moiz/.nvm/versions/node/v20.19.5/bin/npm
+1 info using npm@10.8.2
+2 info using node@v20.19.5
+3 silly config load:file:/Users/moiz/.nvm/versions/node/v20.19.5/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/moiz/CascadeProjects/lab-grader/assignment/results/submission/.npmrc
+5 silly config load:file:/Users/moiz/.npmrc
+6 silly config load:file:/Users/moiz/.nvm/versions/node/v20.19.5/etc/npmrc
+7 verbose title npm config set fetch-retry-maxtimeout 60000
+8 verbose argv "config" "set" "fetch-retry-maxtimeout" "60000"
+9 verbose logfile logs-max:10 dir:/Users/moiz/CascadeProjects/lab-grader/assignment/results/submission/grader-workspace/.npm-cache/_logs/2025-10-22T02_55_28_342Z-
+10 verbose logfile /Users/moiz/CascadeProjects/lab-grader/assignment/results/submission/grader-workspace/.npm-cache/_logs/2025-10-22T02_55_28_342Z-debug-0.log
+11 info config set "fetch-retry-maxtimeout" "60000"
+12 silly logfile done cleaning log files
+13 verbose cwd /Users/moiz/CascadeProjects/lab-grader/assignment/results/submission
+14 verbose os Darwin 24.6.0
+15 verbose node v20.19.5
+16 verbose npm  v10.8.2
+17 verbose exit 0
+18 info ok
